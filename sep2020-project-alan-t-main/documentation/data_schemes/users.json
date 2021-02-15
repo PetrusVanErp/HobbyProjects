@@ -1,0 +1,30 @@
+{
+  "_id": "auto_id",
+  "name": "String",
+  "username": "String",
+  "password": "String", //optional hashing
+  "email": "String", //optional
+  "connections": [
+    {
+      "platform": "String",
+      "client_id": "String" //optional hashing
+    }
+  ],
+  "following": ["String"],
+  "subscribed_playlists": ["Playlists"], //embed
+  "preferred_genres": ["String"],
+  "stats": {
+    "tracks": [
+      {
+        "track": "String",
+        "count": "Number"
+      }
+    ],
+    "genres": [
+      {
+        "genre": "String",
+        "count": "Number"
+      }
+    ]
+  }
+}
