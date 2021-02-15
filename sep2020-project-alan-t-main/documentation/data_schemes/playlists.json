@@ -1,0 +1,8 @@
+{
+  "_id": "auto_id",
+  "name": "String",
+  "description": "String", //optional
+  "owner": "String",
+  "image_url": "String", //optional
+  "tracks": ["String"]
+}
