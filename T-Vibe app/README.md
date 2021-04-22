@@ -7,8 +7,8 @@ Despite these accomplishments, he was never fully recognised in his home country
 # T-Vibe
 _Spread the Vibe_
 
-T-Vibe is a music platform, made to both discover and share new music. It has integrations with popular music sites like YouTube, Spotify and Soundcloud. On T-Vibe you’ll not only listen to the world’s most popular songs, but use those songs to discover new and innovative music and upcoming artists.
+T-Vibe is a music platform, made to both discover and share new music. It has integrations with popular music sites like Spotify and Soundcloud. On T-Vibe you’ll not only listen to the world’s most popular songs, but use those songs to discover new and innovative music and upcoming artists.
 
-When using T-Vibe, you’ll use your existing accounts of platforms like YouTube and Spotify to discover and stream your music, share whatever you’re listening to, to friends and family and discover new music in the process together!
+When using T-Vibe, you’ll use your existing accounts of platforms like Spotify to discover and stream your music, share whatever you’re listening to, to friends and family and discover new music in the process together!
 
 Track your real-time favorite artists, songs and genres, and find new songs and artists based on those rankings!
