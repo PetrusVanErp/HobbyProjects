@@ -1,2 +1,2 @@
 # HobbyProjects
-Projects that I have either made for my study or in my own spare time
+Projects that I have made in my sparetime
