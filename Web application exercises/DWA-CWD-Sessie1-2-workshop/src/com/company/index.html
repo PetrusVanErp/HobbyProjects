@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        /* your CSS here... */
+
+    </style>
+</head>
+<body>
+
+<h1>5 Tweet your heart out!</h1>
+<hr>
+<div id="tweetListContainer">
+    <h3>Your tweets:</h3>
+    <ol id="tweetList">
+        <li>
+            <b><i>Bug Bunny:</i></b><br>
+            "This is my example tweet"
+            <hr>
+        </li>
+    </ol>
+</div>
+<hr>
+<h3>Create a new tweet:</h3>
+<div id="tweetFormContainer">
+    <form id="tweetForm" action="#">
+        <div>
+            <input id="authorName" placeholder="Your name..."/>
+        </div>
+        <div>
+            <textarea id="tweetText" rows="1" cols="35" placeholder="Your tweet..."></textarea>
+        </div>
+        <div id="counterDiv" class="notShown">
+            chars: <span id="characterCounter">0</span>
+        </div>
+        <input id="photoFile" class="notShown" type="file"/>
+        <div id="buttonsDiv" class="notShown">
+            <input type="button" id="photoButton" value="Photo..."/>
+            <input type="submit" id="sendButton" value="Send tweet"/>
+        </div>
+    </form>
+</div>
+
+</body>
+<script>
+
+    let sendButton = document.getElementById("sendButton");
+    sendButton.setAttribute("disabled", "");
+
+    /* =================================CHAR COUNTER==========================================*/
+    let charCounter = document.getElementById("characterCounter");
+    let onKeyPressCount = function (key) {
+        let prevCharCount = charCounter.innerText;
+
+        if (key === null) {
+            prevCharCount = parseInt(prevCharCount) - 1;
+        } else {
+            prevCharCount = parseInt(prevCharCount) + 1;
+        }
+
+        if (prevCharCount > 140 || prevCharCount === 0) {
+            tweetText.style.borderColor = "red";
+            sendButton.setAttribute("disabled", "");
+        } else if (prevCharCount <= 140) {
+            tweetText.style.borderColor = "black";
+            sendButton.removeAttribute("disabled");
+        }
+
+        charCounter.innerText = prevCharCount.toString();
+    }
+
+    /* =================================TWEET TEXT==========================================*/
+    let tweetText = document.getElementById("tweetText");
+    let onTweetTextClicked = function() {
+        tweetText.rows = 8;
+    }
+    tweetText.addEventListener("focus", onTweetTextClicked);
+    tweetText.addEventListener('input', function(event) {
+        tweetText.textContent = this.value;
+        onKeyPressCount(event.data);
+    });
+
+    /* =================================AUTHOR==========================================*/
+    let authorName = document.getElementById("authorName");
+
+    authorName.addEventListener('input', function () {
+        authorName.textContent = this.value;
+    });
+
+    /* =================================FILE & PHOTO==========================================*/
+    let fileUploadButton = document.getElementById("photoFile");
+    fileUploadButton.style.display = "none";
+    let onPhotoButtonClicked = function () {
+        fileUploadButton.style.display = "block";
+        photoButton.style.display = "none";
+    }
+
+    let photoButton = document.getElementById("photoButton");
+    photoButton.addEventListener("click", onPhotoButtonClicked);
+
+    /* =================================SUBMIT==========================================*/
+    let tweetList = document.getElementById("tweetList");
+
+    let submitButton = document.getElementById("sendButton");
+    submitButton.addEventListener("click", event => {
+        let newTweet = document.createElement("li");
+        newTweet.innerHTML = "<b><i>" + authorName.textContent + "</i></b><br>" + tweetText.textContent + "<hr>";
+        tweetList.appendChild(newTweet);
+        tweetText.textContent = "";
+        authorName.textContent = "";
+        sendButton.setAttribute("disabled", "");
+        event.preventDefault();
+    });
+
+</script>
+</html>
